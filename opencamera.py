@@ -1,11 +1,13 @@
 import cv2
-import numpy
- 
-cap = cv2.VideoCapture(1)　　#调整参数实现读取视频或调用摄像头
-while 1:
+#引入库
+cap = cv2.VideoCapture(0)
+while True:
     ret, frame = cap.read()
-    cv2.imshow("cap", frame)
-    if cv2.waitKey(100) & 0xff == ord('q'):
+    cv2.imshow("Video", frame)
+#读取内容
+    if cv2.waitKey(10) == ord("q"):
         break
+        
+#随时准备按q退出
 cap.release()
 cv2.destroyAllWindows()
